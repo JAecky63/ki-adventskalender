@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102536">
+  <meta name="description" content="24 Fragen und überraschende Antworten rund um Künstliche Intelligenz – ein Adventskalender zum Nachdenken.">
+  <title>24 Fragen zur KI · Adventskalender 2026</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="winter-scene" aria-hidden="true">
+    <span class="snowflake snowflake-one">✳</span>
+    <span class="snowflake snowflake-two">✣</span>
+    <span class="snowflake snowflake-three">✳</span>
+    <span class="snowflake snowflake-four">✧</span>
+  </div>
+  <div id="preview-banner" class="preview-banner" hidden>
+    <strong>Redaktionsvorschau</strong> · Alle 24 Türchen sind zum Prüfen freigeschaltet. Diese Datei bitte nicht veröffentlichen.
+  </div>
+  <main class="page-container">
+    <header class="hero">
+      <div class="hero-kicker"><span class="star" aria-hidden="true">✦</span> EIN ADVENTSKALENDER ZUM ENTDECKEN <span class="star" aria-hidden="true">✦</span></div>
+      <h1>24 Fragen <span>zur KI.</span></h1>
+      <p class="hero-lead">24 Türchen. 24 Begriffe. Und jeden Tag eine Frage, die zum Nachdenken anregt.</p>
+      <p class="hero-explanation">Erst überlegen, dann die Karte umdrehen und die Antwort entdecken.</p>
+      <div class="progress-box" aria-live="polite">
+        <div class="progress-top">
+          <span id="progress-label">Der Adventskalender wird vorbereitet …</span>
+          <span id="progress-number" class="progress-number">0 / 24</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Freigeschaltete Türchen" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0" id="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+    </header>
+
+    <section class="calendar-section" aria-labelledby="calendar-heading">
+      <div class="section-heading">
+        <h2 id="calendar-heading">Dein KI-Adventskalender</h2>
+        <p id="calendar-subtitle">Ab dem 1. Dezember öffnet sich jeden Tag ein neues Türchen.</p>
+      </div>
+      <div class="calendar-grid" id="calendar-grid" aria-label="24 Adventskalender-Türchen"></div>
+      <div class="calendar-legend"><span><i class="legend-dot legend-ready" aria-hidden="true"></i> Freigeschaltet</span><span><i class="legend-dot legend-locked" aria-hidden="true"></i> Noch verschlossen</span></div>
+    </section>
+
+    <section class="outro" aria-label="Zum Adventskalender">
+      <div class="outro-ornament" aria-hidden="true">✦</div>
+      <h2>Neugierig bleiben.</h2>
+      <p>KI kann vieles. Umso wichtiger ist es, zu verstehen, wie sie funktioniert, was sie kann – und wo ihre Grenzen liegen.</p>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <p>Idee, didaktische Konzeption und redaktionelle Bearbeitung: Jutta Aeckersberg · Textentwürfe und Programmcode: KI-generiert mit ChatGPT</p>
+    <p><span>Inhalte: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a></span><span aria-hidden="true"> · </span><span>Quellcode: <a href="https://opensource.org/license/mit" target="_blank" rel="noopener noreferrer">MIT-Lizenz</a></span></p>
+  </footer>
+
+  <dialog id="card-dialog" class="card-dialog" aria-labelledby="dialog-day">
+    <div class="dialog-inner">
+      <div class="dialog-top"><span class="dialog-day" id="dialog-day">1. DEZEMBER</span><button type="button" id="close-dialog" class="icon-button" aria-label="Karte schließen">×</button></div>
+      <p class="dialog-eyebrow">WAS DENKST DU?</p>
+      <button type="button" id="flip-card" class="flip-card" aria-label="Antwort anzeigen" aria-pressed="false">
+        <span class="flip-card-inner" id="flip-card-inner">
+          <span class="flip-face flip-front" id="flip-front"><span class="flip-icon" aria-hidden="true">?</span><span id="card-question" class="card-question"></span><span class="flip-hint">ANTIPPEN · ANTWORT ENTDECKEN ↻</span></span>
+          <span class="flip-face flip-back" id="flip-back" aria-hidden="true"><span class="term-kicker">DER BEGRIFF</span><span id="card-term" class="card-term"></span><span id="card-answer" class="card-answer"></span><span class="back-note"><span class="back-note-title">AHA!</span><span id="card-thought"></span></span><span class="flip-hint">ANTIPPEN · FRAGE NOCHMAL ANSEHEN ↻</span></span>
+        </span>
+      </button>
+      <section id="card-extra" class="card-extra" aria-label="Weiterführende Materialien und Experimente" hidden>
+        <div id="card-activity" class="card-activity" hidden></div>
+        <div id="card-resources" class="card-resources" hidden>
+          <h3>Mehr erfahren</h3>
+          <div id="card-resource-list" class="resource-list"></div>
+        </div>
+      </section>
+      <div class="dialog-actions"><button type="button" id="prev-card" class="nav-button">← Vorheriges Türchen</button><button type="button" id="next-card" class="nav-button">Nächstes Türchen →</button></div>
+    </div>
+  </dialog>
+</body>
+</html>
